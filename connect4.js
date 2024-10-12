@@ -56,5 +56,16 @@ const checkDirection = (row, col, rowIncrement, colIncrement) => {
   return count >= 4;
 }
 
+const countCells = (row, col, rowIncrement, colIncrement) => {
+  let count = 0;
+  let r = row + rowIncrement;
+  let c = col + colIncrement;
+  while (r >= 0 && c >= 0 && c < cols && board[r][c] === currentPlayer) {
+    count++;
+    r += rowIncrement;
+    c += colIncrement;
+  }
+  return count;
+};
 
 
