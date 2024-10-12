@@ -68,4 +68,8 @@ const countCells = (row, col, rowIncrement, colIncrement) => {
   return count;
 };
 
+const updateStatus = () => {
+  const statusDiv = document.getElementById('status');
+  statusDiv.textContent = `${currentPlayer.toUpperCase()}'s turn`; 
+};
 
