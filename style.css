@@ -1,3 +1,4 @@
+/* Basic Body Styling */
 body {
   display: flex;
   flex-direction: column;
@@ -6,6 +7,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Title Styling */
 h1 {
   margin-top: 20px;
   color: #333;
@@ -13,86 +15,7 @@ h1 {
   font-family: 'Sixtyfour Convergence', sans-serif;
 }
 
-#board {
-  display: grid;
-  grid-template-columns: repeat(7, 80px);
-  grid-template-rows: repeat(6, 80px);
-  gap: 5px;
-  margin-top: 20px;
-}
-
-.red {
-  background-color: red !important;
-}
-
-.yellow {
-  background-color: yellow !important;
-}
-
-#status {
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); 
-  background-color: rgba(0, 0, 0, 0.5); 
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.cell {
-  width: 80px;
-  height: 80px;
-  background-color: #a5a6a7; 
-  border-radius: 50%; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.5s ease-in;  
-}
-
-#winnerMessage {
-  color: white;
-  font-size: 28px;
-  font-weight: bold;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); 
-  background-color: rgba(0, 0, 0, 0.5); 
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-#resetButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background: linear-gradient(135deg, #ff7f50, #ff4500); 
-  color: white;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
-  transition: background 0.3s ease, box-shadow 0.3s ease; 
-}
-
-#resetButton:hover {
-  background: linear-gradient(135deg, #ff6347, #ff0000); 
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5); 
-}
-
-#gameContainer {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: url(images/marble.jpg);
-  width: fit-content;
-  margin: 0 auto;
-  border: 20px solid transparent; 
-  border-color: #2b2a2a; 
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); 
-}
-
+/* Game Mode Buttons */
 #gameMode {
   margin-bottom: 20px;
 }
@@ -104,12 +27,111 @@ h1 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: linear-gradient(135deg, #ff7f50, #ff4500); /* Gradient background */
+  background: linear-gradient(135deg, #ff7f50, #ff4500);
   color: white;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 #gameMode button:hover {
-  background: linear-gradient(135deg, #ff6347, #ff0000); /* Hover effect */
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5); /* Hover shadow */
+  background: linear-gradient(135deg, #ff6347, #ff0000);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Highlight the active game mode */
+.active-mode {
+  background: linear-gradient(135deg, #32CD32, #008000); /* Green for active */
+  color: white;
+}
+
+/* Game Mode Status */
+#gameModeStatus {
+  margin-bottom: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+/* Rest of the CSS remains unchanged */
+#gameContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(images/marble.jpg); /* Background image */
+  width: fit-content;
+  margin: 0 auto;
+  border: 20px solid transparent;
+  border-color: #2b2a2a;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(7, 80px);
+  grid-template-rows: repeat(6, 80px);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+/* Board Cells */
+.cell {
+  width: 80px;
+  height: 80px;
+  background-color: #a5a6a7; /* Default gray color */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease-in;
+}
+
+.red {
+  background-color: red !important;
+}
+
+.yellow {
+  background-color: yellow !important;
+}
+
+/* Game Status */
+#status {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+/* Winner Message */
+#winnerMessage {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Reset Button */
+#resetButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff7f50, #ff4500);
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#resetButton:hover {
+  background: linear-gradient(135deg, #ff6347, #ff0000);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
 }
