@@ -2,6 +2,7 @@ const rows = 6;
 const cols = 7;
 let board = [];
 let currentPlayer = 'red';
+let gameMode = 'pvp';
 
 console.log("Connect 4 game loaded");
 
@@ -45,6 +46,27 @@ const handleClick = (e) => {
     }
   }
 };
+
+const computerMove = () => {
+  let col;
+  let row;
+
+  do {
+    col = Math.floor(Math.random() * cols);
+    row = rows - 1;
+    while (row >= 0 && board[row][col]) {
+      row--;
+    }
+  } while (row < 0);
+
+  board[row][col] = 'yellow';
+  const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+}
+
+
+
+
+
 
 const checkWin = (row, col) => {
   return checkDirection(row, col, 1, 0) ||  
