@@ -45,7 +45,16 @@ const checkWin = (row, col) => {
   return checkDirection(row, col, 1, 0) ||
          checkDirection(row, col, 0, 1) ||
          checkDirection(row, col, 1, 1) ||
-         checkDirection(row, col, 1, -1) ||
+         checkDirection(row, col, 1, -1); 
 
+};
+
+const checkDirection = (row, col, rowIncrement, colIncrement) => {
+  let count = 1;
+  count += countCells(row, col, rowIncrement, colIncrement);
+  count += countCells(row, col, rowIncrement, colIncrement);
+  return count >= 4;
 }
+
+
 
