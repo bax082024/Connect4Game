@@ -73,3 +73,9 @@ const updateStatus = () => {
   statusDiv.textContent = `${currentPlayer.toUpperCase()}'s turn`; 
 };
 
+const resetGame = () => {
+  setTimeout(() => {
+    createBoard();
+    currentPlayer = 'red';
+    }, 500);
+};
