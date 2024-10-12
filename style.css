@@ -26,3 +26,8 @@ h1 {
 .yellow {
   background-color: yellow;
 }
+
+#status {
+  margin-top: 20px;
+  font-size: 20px;
+}
