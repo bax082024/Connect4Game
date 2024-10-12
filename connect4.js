@@ -65,8 +65,12 @@ const computerMove = () => {
 
   if (checkWin(row, col)) {
     document.getElementById('winnerMessage').textContent = 'YELLOW Wins!';
+    return;
   }
-}
+
+  currentPlayer = 'red';
+  updateStatus();
+};
 
 
 
