@@ -77,6 +77,10 @@ const updateStatus = () => {
   statusDiv.textContent = `${currentPlayer.toUpperCase()}'s turn`;
 };
 
+document.getElementById('resetButton').addEventListener('click', () => {
+  resetGame();
+});
+
 const resetGame = () => {
   setTimeout(() => {
     createBoard();
