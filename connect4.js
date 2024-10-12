@@ -26,22 +26,21 @@ const createBoard = () => {
 
 const handleClick = (e) => {
   const col = parseInt(e.target.dataset.col);
-  console.log("Column clicked:", col);  // Log the clicked column
 
   for (let row = rows - 1; row >= 0; row--) {
     if (!board[row][col]) {
       board[row][col] = currentPlayer;
       const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
-      console.log("Assigning to cell:", row, col, "currentPlayer:", currentPlayer);  // Log row, col, and player
-      cell.classList.add(currentPlayer);  // Adds 'red' or 'yellow' class based on the current player
-      console.log(cell);  // Log the cell to check if the class is added
+      cell.classList.add(currentPlayer);
+
+      // Check for a win
       if (checkWin(row, col)) {
-        setTimeout(() => alert(`${currentPlayer.toUpperCase()} Wins!`), 100);
-        resetGame();
-        return;
+        document.getElementById('winnerMessage').textContent = `${currentPlayer.toUpperCase()} Wins!`;  // Show the winner
+        return;  // Stop further actions after a win
       }
-      currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';  // Switch player
-      updateStatus();  // Update the turn indicator
+
+      currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';  // Switch players
+      updateStatus();  // Update the status message
       return;
     }
   }
@@ -81,6 +80,7 @@ const updateStatus = () => {
 const resetGame = () => {
   setTimeout(() => {
     createBoard();
+    document.getElementById('winnerMessage').textContent = '';  // Clear win message
     currentPlayer = 'red';
   }, 500);
 };
