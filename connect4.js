@@ -16,7 +16,7 @@ const createBoard = () => {
       cell.classList.add('cell');
       cell.dataset.row = row;
       cell.dataset.col = col;
-      cell.addEventListener('click', handleClick);  // Fixed typo
+      cell.addEventListener('click', handleClick); 
       boardDiv.appendChild(cell);
     }
   }
@@ -33,30 +33,30 @@ const handleClick = (e) => {
       const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
       cell.classList.add(currentPlayer);
 
-      // Check for a win
+      
       if (checkWin(row, col)) {
-        document.getElementById('winnerMessage').textContent = `${currentPlayer.toUpperCase()} Wins!`;  // Show the winner
-        return;  // Stop further actions after a win
+        document.getElementById('winnerMessage').textContent = `${currentPlayer.toUpperCase()} Wins!`;  
+        return;  
       }
 
-      currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';  // Switch players
-      updateStatus();  // Update the status message
+      currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';  
+      updateStatus();  
       return;
     }
   }
 };
 
 const checkWin = (row, col) => {
-  return checkDirection(row, col, 1, 0) ||  // Horizontal
-         checkDirection(row, col, 0, 1) ||  // Vertical
-         checkDirection(row, col, 1, 1) ||  // Diagonal (down-right)
-         checkDirection(row, col, 1, -1);   // Diagonal (up-right)
+  return checkDirection(row, col, 1, 0) ||  
+         checkDirection(row, col, 0, 1) ||  
+         checkDirection(row, col, 1, 1) ||  
+         checkDirection(row, col, 1, -1);   
 };
 
 const checkDirection = (row, col, rowIncrement, colIncrement) => {
   let count = 1;
-  count += countCells(row, col, rowIncrement, colIncrement);   // Forward
-  count += countCells(row, col, -rowIncrement, -colIncrement); // Backward
+  count += countCells(row, col, rowIncrement, colIncrement);   
+  count += countCells(row, col, -rowIncrement, -colIncrement); 
   return count >= 4;
 };
 
@@ -84,10 +84,10 @@ document.getElementById('resetButton').addEventListener('click', () => {
 const resetGame = () => {
   setTimeout(() => {
     createBoard();
-    document.getElementById('winnerMessage').textContent = '';  // Clear win message
+    document.getElementById('winnerMessage').textContent = '';  
     currentPlayer = 'red';
   }, 500);
 };
 
-// Call createBoard to initialize the game
+
 createBoard();
