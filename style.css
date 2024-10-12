@@ -9,6 +9,7 @@ body {
 h1 {
   margin-top: 20px;
   color: #333;
+  font-family: 'Sixtyfour Convergence', sans-serif;
 }
 
 #board {
@@ -35,7 +36,7 @@ h1 {
 .cell {
   width: 80px;
   height: 80px;
-  background-color: #0074D9; /* Default blue color for empty cells */
+  background-color: #a5a6a7; /* Default blue color for empty cells */
   border-radius: 50%; /* Circle shape */
   display: flex;
   justify-content: center;
@@ -55,13 +56,28 @@ h1 {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #0074D9;
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  background: linear-gradient(135deg, #ff7f50, #ff4500); /* Gradient background */
+  color: white; /* White text */
+  transition: background 0.3s ease; /* Smooth transition for background */
 }
 
 #resetButton:hover {
-  background-color: #005fa3;
+  background: linear-gradient(135deg, #ff6347, #ff0000); /* Slightly different gradient on hover */
+}
+
+#gameContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(images/marble.jpg);
+  width: fit-content;
+  margin: 0 auto;
+  border: 20px solid transparent; 
+  border-color: #2b2a2a; 
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
 }
