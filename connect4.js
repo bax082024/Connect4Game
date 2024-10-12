@@ -17,7 +17,35 @@ const createBoard = () => {
       cell-addEventListener('click', handleClick);
       boardDiv.appendChild(cell);
     }
-
   }
+
+  updateStatus();
+};
+
+const hancleClick = (e) => {
+  const col = parseInt(e.target.dataset.col);
+  for (let row = rows - 1; row >= 0; row --) {
+    if (!board[row][col]) {
+      board[row][col] = currentPlayer;
+      const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+      cell.classList.add(currentPlayer);
+      if (checkWin(row, col)) {
+        setTimeout(() => alert(`${currentPlayer.toUpperCase()} Wins!`), 100);
+        resetGame();
+        return;
+      }
+      currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';
+      updateStatus();
+      return;
+    }
+  }
+};
+
+const checkWin = (row, col) => {
+  return checkDirection(row, col, 1, 0) ||
+         checkDirection(row, col, 0, 1) ||
+         checkDirection(row, col, 1, 1) ||
+         checkDirection(row, col, 1, -1) ||
+
 }
 
