@@ -61,6 +61,11 @@ const computerMove = () => {
 
   board[row][col] = 'yellow';
   const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+  cell.classList.add('yellow');
+
+  if (checkWin(row, col)) {
+    document.getElementById('winnerMessage').textContent = 'YELLOW Wins!';
+  }
 }
 
 
