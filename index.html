@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connect 4</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
-</head>
-<body>
-  <h1>Connect 4</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect 4</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    
+      <h1>Connect 4</h1>
 
-  <!-- Game Mode Selection -->
-  <div id="gameMode">
-    <button id="pvpButton">Player vs Player</button>
-    <button id="pvcButton">Player vs Computer</button>
-  </div>
-  
-  <!-- Display Current Game Mode -->
-  <div id="gameModeStatus"></div>
+      <!-- Game Mode Selection -->
+      <div id="gameMode">
+        <button id="pvpButton">Player vs Player</button>
+        <button id="pvcButton">Player vs Computer</button>
+      </div>
 
-  <!-- Game Board and Status -->
-  <div id="gameContainer">
-    <div id="board"></div>
-    <div id="status"></div>
-    <div id="winnerMessage"></div>
-    <button id="resetButton">Reset Game</button>
-  </div>
-
-  <script src="connect4.js"></script>
-</body>
+      <!-- Display Current Game Mode -->
+      <div id="gameModeStatus"></div>
+      
+    <div class="function-collector"></div>
+      <!-- Game Board and Status -->
+      <div id="gameContainer">
+        <div id="board"></div>
+        <div id="status"></div>
+        <div id="winnerMessage"></div>
+        <button id="resetButton">Reset Game</button>
+      </div>
+    </div>
+    <script src="connect4.js"></script>
+  </body>
 </html>

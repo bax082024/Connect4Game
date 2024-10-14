@@ -12,7 +12,8 @@ h1 {
   margin-top: 20px;
   color: #333;
   font-size: 48px;
-  font-family: 'Sixtyfour Convergence', sans-serif;
+  font-family: "Sixtyfour Convergence", sans-serif;
+  align-items: center;
 }
 
 /* Game Mode Buttons */
@@ -37,12 +38,10 @@ h1 {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
 }
 
-
 .active-mode {
-  background: linear-gradient(135deg, #32CD32, #008000); 
+  background: linear-gradient(135deg, #32cd32, #008000);
   color: white;
 }
-
 
 #gameModeStatus {
   margin-bottom: 10px;
@@ -50,14 +49,13 @@ h1 {
   font-size: 18px;
 }
 
-
 #gameContainer {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(images/marble.jpg); 
+  background-image: url(images/marble.jpg);
   width: fit-content;
   margin: 0 auto;
   border: 20px solid transparent;
@@ -67,17 +65,16 @@ h1 {
 
 #board {
   display: grid;
-  grid-template-columns: repeat(7, 80px);
+  grid-template-columns: repeat(7, minmax(50px, 80px));
   grid-template-rows: repeat(6, 80px);
   gap: 5px;
   margin-top: 20px;
 }
 
-
 .cell {
   width: 80px;
   height: 80px;
-  background-color: #a5a6a7; 
+  background-color: #a5a6a7;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -93,7 +90,6 @@ h1 {
   background-color: yellow !important;
 }
 
-
 #status {
   color: white;
   font-size: 24px;
@@ -105,7 +101,6 @@ h1 {
   margin-top: 15px;
 }
 
-
 #winnerMessage {
   color: white;
   font-size: 28px;
@@ -116,7 +111,6 @@ h1 {
   border-radius: 5px;
   margin-top: 10px;
 }
-
 
 #resetButton {
   margin-top: 20px;
@@ -135,3 +129,18 @@ h1 {
   background: linear-gradient(135deg, #ff6347, #ff0000);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
 }
+
+.function-collector {
+  max-height: 800px;
+  max-width: 700px;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+/*
+@media (max-width: 1024px) {
+  #board {
+    grid-template-columns: repeat(7, 60px);
+  }
+}
+*/
