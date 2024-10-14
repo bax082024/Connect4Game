@@ -2,9 +2,9 @@ const rows = 6;
 const cols = 7;
 let board = [];
 let currentPlayer = 'red';
-let gameMode = 'pvp'; // Default game mode is Player vs Player
+let gameMode = 'pvp'; 
 
-// Initialize the game board
+
 const createBoard = () => {
   const boardDiv = document.getElementById('board');
   boardDiv.innerHTML = '';
@@ -24,7 +24,7 @@ const createBoard = () => {
   updateStatus();
 };
 
-// Handle player's move
+
 const handleClick = (e) => {
   const col = parseInt(e.target.dataset.col);
 
@@ -42,9 +42,9 @@ const handleClick = (e) => {
       currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';
       updateStatus();
 
-      // If in PvC mode, let the computer make a move
+      
       if (gameMode === 'pvc' && currentPlayer === 'yellow') {
-        setTimeout(computerMove, 500); // Delay the computer move slightly
+        setTimeout(computerMove, 500); 
       }
 
       return;
@@ -52,7 +52,7 @@ const handleClick = (e) => {
   }
 };
 
-// Computer's move (simple AI)
+
 const computerMove = () => {
   let col;
   let row;
@@ -78,18 +78,18 @@ const computerMove = () => {
   updateStatus();
 };
 
-// Check for win conditions
+
 const checkWin = (row, col) => {
-  return checkDirection(row, col, 1, 0) ||  // Horizontal
-         checkDirection(row, col, 0, 1) ||  // Vertical
-         checkDirection(row, col, 1, 1) ||  // Diagonal (down-right)
-         checkDirection(row, col, 1, -1);   // Diagonal (up-right)
+  return checkDirection(row, col, 1, 0) || 
+         checkDirection(row, col, 0, 1) ||  
+         checkDirection(row, col, 1, 1) ||  
+         checkDirection(row, col, 1, -1);  
 };
 
 const checkDirection = (row, col, rowIncrement, colIncrement) => {
   let count = 1;
-  count += countCells(row, col, rowIncrement, colIncrement);   // Forward
-  count += countCells(row, col, -rowIncrement, -colIncrement); // Backward
+  count += countCells(row, col, rowIncrement, colIncrement); 
+  count += countCells(row, col, -rowIncrement, -colIncrement);
   return count >= 4;
 };
 
@@ -105,7 +105,7 @@ const countCells = (row, col, rowIncrement, colIncrement) => {
   return count;
 };
 
-// Update status text and game mode status
+
 const updateStatus = () => {
   const statusDiv = document.getElementById('status');
   const gameModeStatusDiv = document.getElementById('gameModeStatus');
@@ -119,7 +119,7 @@ const updateStatus = () => {
   }
 };
 
-// Reset the game
+
 document.getElementById('resetButton').addEventListener('click', () => {
   resetGame();
 });
@@ -132,11 +132,11 @@ const resetGame = () => {
   }, 500);
 };
 
-// Handle game mode button clicks
+
 document.getElementById('pvpButton').addEventListener('click', () => {
   gameMode = 'pvp';
   resetGame();
-  // Update active button state
+  
   document.getElementById('pvpButton').classList.add('active-mode');
   document.getElementById('pvcButton').classList.remove('active-mode');
 });
@@ -144,10 +144,10 @@ document.getElementById('pvpButton').addEventListener('click', () => {
 document.getElementById('pvcButton').addEventListener('click', () => {
   gameMode = 'pvc';
   resetGame();
-  // Update active button state
+  
   document.getElementById('pvcButton').classList.add('active-mode');
   document.getElementById('pvpButton').classList.remove('active-mode');
 });
 
-// Initialize the game
+
 createBoard();

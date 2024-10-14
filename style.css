@@ -37,27 +37,27 @@ h1 {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Highlight the active game mode */
+
 .active-mode {
-  background: linear-gradient(135deg, #32CD32, #008000); /* Green for active */
+  background: linear-gradient(135deg, #32CD32, #008000); 
   color: white;
 }
 
-/* Game Mode Status */
+
 #gameModeStatus {
   margin-bottom: 10px;
   color: white;
   font-size: 18px;
 }
 
-/* Rest of the CSS remains unchanged */
+
 #gameContainer {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(images/marble.jpg); /* Background image */
+  background-image: url(images/marble.jpg); 
   width: fit-content;
   margin: 0 auto;
   border: 20px solid transparent;
@@ -73,11 +73,11 @@ h1 {
   margin-top: 20px;
 }
 
-/* Board Cells */
+
 .cell {
   width: 80px;
   height: 80px;
-  background-color: #a5a6a7; /* Default gray color */
+  background-color: #a5a6a7; 
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -93,7 +93,7 @@ h1 {
   background-color: yellow !important;
 }
 
-/* Game Status */
+
 #status {
   color: white;
   font-size: 24px;
@@ -105,7 +105,7 @@ h1 {
   margin-top: 15px;
 }
 
-/* Winner Message */
+
 #winnerMessage {
   color: white;
   font-size: 28px;
@@ -117,7 +117,7 @@ h1 {
   margin-top: 10px;
 }
 
-/* Reset Button */
+
 #resetButton {
   margin-top: 20px;
   padding: 10px 20px;
